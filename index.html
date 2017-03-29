@@ -11,17 +11,18 @@
    <div id = "app"></div>
      <script type ="text/javascript">
 
-     const myDiv = React.createElement("div", null,
-            	React.createElement("h1", null, "Hello World"),
-                React.createElement("h2", null, "Things to do in Hawaii:"),
-                React.createElement("ul", null, 
-                	React.createElement("li", null, "Eat Good food"),
-					React.createElement("li", null, "Lay on beach"),
-					React.createElement("li", null, "Drink fruity adult bevs"),
-					React.createElement("li", null, "Nom nom nom")
-                )
+        const App = (props) => {
+
+            return React.createElement('div', null, 
+                
             );
-            ReactDOM.render(myDiv, document.getElementById("app"));
+        }
+        
+        const Tile = (props) => {
+            return React.createElement('h1', null, 'Tile');
+        }
+        
+        ReactDOM.render( React.createElement(App, null), document.getElementById("app"));
      </script>
    
  </body>
