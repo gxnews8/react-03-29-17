@@ -14,16 +14,17 @@
         const tileDesriptions = [
             { color: 'blue', background: 'darkBlue'}, 
             { color: 'brown', background: 'pink'},
-            { color: 'aquamarine', background: 'yellow'}
+            { color: 'aquamarine', background: 'yellow'},
+            { color: 'red', background: 'green'}
         ]
 
         const App = (props) => {
-
-            return React.createElement('div', null, 
-               
-            );
+            const tiles = props.tiles.map((tileObj) => {
+                return React.createElement(Tile, tileObj);
+            })
+            return React.createElement('div', null, tiles);
         }
-       
+
         const Tile = (props) => {
             const textColor = props.color;
             const backgroundColor = props.background;
