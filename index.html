@@ -11,14 +11,19 @@
    <div id = "app"></div>
      <script type ="text/javascript">
 
+        const tileDesriptions = [
+            { color: 'blue', background: 'darkBlue'}, 
+            { color: 'brown', background: 'pink'},
+            { color: 'aquamarine', background: 'yellow'}
+        ]
+
         const App = (props) => {
 
             return React.createElement('div', null, 
-                React.createElement(Tile, { color: 'blue', background: 'darkBlue'}),
-                React.createElement(Tile, { color: 'brown', background: 'pink'}),
-                React.createElement(Tile, { color: 'aquamarine', background: 'yellow'})
+               
             );
         }
+       
         const Tile = (props) => {
             const textColor = props.color;
             const backgroundColor = props.background;
@@ -31,7 +36,8 @@
             }
             return React.createElement('div', { style }, `${textColor} on ${backgroundColor}`);
         } 
-        ReactDOM.render( React.createElement(App, {}), document.getElementById("app"));
+       
+        ReactDOM.render( React.createElement(App, { tiles: tileDesriptions }), document.getElementById("app"));
      </script>
    
  </body>
