@@ -14,15 +14,24 @@
         const App = (props) => {
 
             return React.createElement('div', null, 
-                
+                React.createElement(Tile, { color: 'blue', background: 'darkBlue'}),
+                React.createElement(Tile, { color: 'brown', background: 'pink'}),
+                React.createElement(Tile, { color: 'aquamarine', background: 'yellow'})
             );
         }
-        
         const Tile = (props) => {
-            return React.createElement('h1', null, 'Tile');
-        }
-        
-        ReactDOM.render( React.createElement(App, null), document.getElementById("app"));
+            const textColor = props.color;
+            const backgroundColor = props.background;
+            const style = {
+                height: 150,
+                width: 150,
+                display: 'inline-block',
+                backgroundColor,
+                color: textColor
+            }
+            return React.createElement('div', { style }, `${textColor} on ${backgroundColor}`);
+        } 
+        ReactDOM.render( React.createElement(App, {}), document.getElementById("app"));
      </script>
    
  </body>
